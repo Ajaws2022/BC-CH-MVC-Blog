@@ -1,0 +1,20 @@
+{
+  "name": "bc-ch-mvc-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ajaws2022/BC-CH-MVC-Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ajaws2022/BC-CH-MVC-Blog/issues"
+  },
+  "homepage": "https://github.com/Ajaws2022/BC-CH-MVC-Blog#readme"
+}
