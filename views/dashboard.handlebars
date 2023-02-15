@@ -1,0 +1,18 @@
+{{#if post.length}}
+<div>
+    {{#each post}}
+    <div>
+        <div>
+            <h1>
+                {{post.title}}
+            </h1>
+            <h4>
+                Created by {{user.userName}} on {{post.date}}
+            </h4>
+        </div>
+        <p>
+            {{post.content}}
+        </p>
+    </div>
+    {{/each}}
+</div>
