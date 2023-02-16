@@ -72,5 +72,7 @@ content-area {
     border-style: solid;
     border-width: .25rem;
     border-color: rgb(68, 85, 79);
-    align-items: center;
+    border-top: 0;
+    justify-content: space-around;
 }
+

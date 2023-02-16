@@ -1,18 +1,20 @@
 {{#if post.length}}
+<h2>Check out the Posts!</h2>
 <div>
     {{#each post}}
-    <div>
-        <div>
-            <h1>
-                {{post.title}}
-            </h1>
-            <h4>
-                Created by {{user.userName}} on {{post.date}}
-            </h4>
+    <div class="postTitle" href="/posts/{{post.id}}">
+        <h1>
+            <a href="/posts/{{post.id}}"> Sample </a>
+        </h1>
+        <h4 class="postInfo">
+            Created by {{name}} on {{date}}
+        </h4>
+        <div class="postContent">
+            <p>
+              {{post.content}}
+            </p>
         </div>
-        <p>
-            {{post.content}}
-        </p>
     </div>
     {{/each}}
 </div>
+{{/if}}
