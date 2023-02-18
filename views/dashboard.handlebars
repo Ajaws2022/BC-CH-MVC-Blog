@@ -1,5 +1,10 @@
-{{#if post.length}}
-<h2>Check out the Posts!</h2>
+<div>
+    <h2>Your Posts</h2>
+
+    <button id="createPost">New Post</button>
+</div>
+
+
 <div>
     {{#each post}}
     <div class="postTitle" href="/posts/{{post.id}}">
@@ -7,14 +12,8 @@
             <a href="/posts/{{post.id}}"> Sample </a>
         </h1>
         <h4 class="postInfo">
-            Created by {{name}} on {{date}}
+            Created on {{post.date}}
         </h4>
-        <div class="postContent">
-            <p>
-              {{post.content}}
-            </p>
-        </div>
     </div>
     {{/each}}
 </div>
-{{/if}}

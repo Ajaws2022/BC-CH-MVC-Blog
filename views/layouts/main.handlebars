@@ -17,17 +17,10 @@
     {{#if loggedIn}}
     <button id="logout">Logout</button>
     {{else}}
-    <a href="/login">Login</a>
+    <button href="/login">Login</button>
     {{/if}}
   </nav>
   <main>
-    <aside>
-      {{#if document.location = '/homepage'}}
-      <h2>Check out the Posts!</h2>
-      {{else}}
-      <h2>Welcome to your Dashboard</h2>
-      {{/if}}
-    </aside>
     <div >
       {{{body}}}
     </div>

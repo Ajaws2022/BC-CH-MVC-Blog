@@ -12,10 +12,6 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         content: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -26,6 +22,13 @@ Comment.init(
                 model: 'user',
                 key: 'id',
             },
+        },
+        post_id: {
+           type: DataTypes.INTEGER,
+           references: {
+            model: 'post',
+            key: 'id'
+           } 
         },
         date: {
             type: DataTypes.DATE,
