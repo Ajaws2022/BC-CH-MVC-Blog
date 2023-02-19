@@ -51,6 +51,24 @@ router.get('/post/:id', withAuth, async(req, res) => {
         res.status(401).json(err)
     }
 });
+router.get('/updatepost/:id', withAuth, async(req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id,{
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+
+        const singlePost = postData.get({plain: true})
+
+        res.render('update', {
+            ...singlePost,
+            logged_in: true
+        });
+    } catch(err){
+        res.status(401).json(err)
+    }
+});
 
 router.get('/dashboard', withAuth, async(req, res) => {
     try {
