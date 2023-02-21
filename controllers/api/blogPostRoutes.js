@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 const { Post } = require('../../models');
 
 router.post('/', withAuth, async (req, res) => {
@@ -24,9 +24,8 @@ router.put('/:id', withAuth, async (req, res) => {
             }
         });
 
-        res.status(200).json(
-            {message: 'Post Updated'}
-        )
+        res.status(200).json(updatePost);
+
     } catch (err) {
         res.status(500).json(err)
     }

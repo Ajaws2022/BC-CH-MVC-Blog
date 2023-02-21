@@ -1,20 +1,24 @@
 <div>
-    <h2>Your Posts</h2>
+    <h2 class="yourPosts">Your Posts</h2>
 
 </div>
 
 
 <div>
     {{#each post}}
-    <div class="postTitle" href="/post/{{post.id}}">
+    <div class="postTitle" href="/post/{{post.id}}" id="{{post.id}}">
         <h1>
-            <a href="/posts/{{post.id}}"> Sample </a>
+            <a href="/posts/{{post.id}}"> {{post.title}}</a>
         </h1>
         <h4 class="postInfo">
             Created on {{post.date}}
         </h4>
     </div>
     {{/each}}
-
-    <button id="createPost"> <a href="/newPost"> New Post </a></button>
+    <div class="postBtn">
+        <button id="createPost"> <a href="/newPost"> New Post </a></button>
+    </div>
+    
 </div>
+
+<script src="./js/dashboard.js"></script>

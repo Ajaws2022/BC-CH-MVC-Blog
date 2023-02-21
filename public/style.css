@@ -43,13 +43,16 @@ content-area {
     flex-flow: row wrap;
 }
 
+
+.yourPosts{
+    color: rgb(68, 85, 79)
+}
 .postTitle {
     display: flex;
     justify-content: space-between;
     background-color: rgb(68, 85, 79);
     color: rgb(31, 36, 34);
 }
-
 .postTitle h1 a{
     text-decoration: none;
     color: inherit;
@@ -57,7 +60,21 @@ content-area {
     margin-bottom: 0;
     align-self: flex-end;
 }
-
+.createPost{
+    background-color: darkorange;
+}
+.postBtn{
+    display: flex;
+    justify-content: space-evenly;
+}
+.postBtn button {
+    background-color: darkorange;
+    text-decoration: none;
+}
+.postBtn a {
+    text-decoration: none;
+    color: rgb(31, 36, 34);
+}
 .postInfo{
     background-color: rgb(53, 60, 57);
     color: darkorange;
@@ -66,7 +83,38 @@ content-area {
     padding: .25rem;
 
 }
-
+.post-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.newPostTitle{
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(120, 132, 128);
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+.newPostContent{
+    display: flex;
+    border-style: solid;
+    border-width: .25rem;
+    border-color: rgb(68, 85, 79);
+    width: 100%;
+    justify-content: space-around;
+    
+    height: 200px;
+}
+.create-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+.create-btn button{
+    margin-top: 1.5rem;
+   width: 33%;
+   background-color: darkorange;
+}
 .postContent{
     display: flex;
     border-style: solid;
@@ -75,4 +123,34 @@ content-area {
     border-top: 0;
     justify-content: space-around;
 }
+.postComments{
+    display: flex;
+    border-style: solid;
+    border-width: .25rem;
+    border-color: rgb(68, 85, 79);
+    
+    justify-content: space-around;
+}
+.comment-form{
+    display: none;
+}
 
+.comment-form-open{
+    border-style: solid;
+    border-width: .25rem;
+    border-color: rgb(68, 85, 79);
+}
+
+.comment-form-open button {
+    background-color: darkorange;
+}
+
+.add-comment{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.add-comment button{
+    margin-top: 0.5rem;
+    background-color: darkorange;
+}

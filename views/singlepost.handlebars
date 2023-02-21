@@ -1,16 +1,34 @@
 <div>
     
-    <div class="postTitle">
+    <div class="postTitle" id="{{post.id}}">
         <h1>
             {{post.title}}
         </h1>
         <h4 class="postInfo">
-            Created on {{post.date}}
+            Created by {{user.userName}} on {{post.date}}
         </h4>
+        
+    </div>
+    <div class="postContent">
         <p>{{post.content}}</p>
     </div>
-    
+    <div >
+        {{#each comment}}
+        <div class="postComments">
+            <p>{{comment.content}}</p>
+            <p>{{comment.user_id.userName}}</p>
+        </div>
+        {{/each}}
+    </div>
+    <form class="comment-form">
+       <div class="form">
+            <input class="form-input" type="text" id="comment-content" />
+       </div>
+      <button id="submitButton" type="submit">submit</button>
+    </form>
 
-    <button id="updatePost"> <a href="/updatePost"> New Post </a></button>
-    <button id = "deletePost"> Delete Post</button>
+    <div class="addcomment">
+        <button id = "addComment">Add Comment</button>
+    </div>
+    
 </div>

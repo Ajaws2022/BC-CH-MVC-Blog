@@ -1,5 +1,3 @@
-const Post = require("../../models/Post");
-
 const loginHandler = async (event) => {
     event.preventDefault();
 
