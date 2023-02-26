@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title":"TestPost1",
+        "content": "This is the first test post",
+        "user_id": 1,
+        "date": "2023-02-26"
+    },
+    {
+        "id": 2,
+        "title":"TestPost2",
+        "content": "This is the second test post",
+        "user_id": 2,
+        "date": "2023-02-26"
+    },
+    {
+        "id": 3,
+        "title":"TestPost3",
+        "content": "This is the third test post",
+        "user_id": 3,
+        "date": "2023-02-26"
+    }
+]
