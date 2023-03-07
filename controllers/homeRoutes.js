@@ -10,16 +10,16 @@ router.get('/', async(req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['id', 'userName']
                 }
             ]
         });
 
         const posts = allPostData.map((post) => post.get({plain: true}));
-
+        
         res.render('homepage', {
-            posts,
-            logged_in: req.session.logged_in
+            posts
+            // logged_in: req.session.logged_in
         });
     } catch (err){
         res.status(500).json(err)
@@ -28,11 +28,11 @@ router.get('/', async(req, res) => {
 
 router.get('/post/:id', withAuth, async(req, res) => {
     try {
-        const postData = await Post.findByPk(req.params.id, {
+        const postData = await Post.findOne({where: {id: req.params.id}}, {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['userName']
                 },
                 {
                     model: Comment,
@@ -40,11 +40,11 @@ router.get('/post/:id', withAuth, async(req, res) => {
                 }
             ]
         });
-
+        console.log(postData)
         const singlePost = postData.get({plain: true})
-
+        console.log(singlePost)
         res.render('singlepost', {
-            ...singlePost,
+            singlePost,
             logged_in: true
         });
     } catch(err){
@@ -62,7 +62,7 @@ router.get('/updatepost/:id', withAuth, async(req, res) => {
         const singlePost = postData.get({plain: true})
 
         res.render('update', {
-            ...singlePost,
+            singlePost,
             logged_in: true
         });
     } catch(err){
@@ -85,11 +85,18 @@ router.get('/dashboard', withAuth, async(req, res) => {
         const user = userData.get({plain:true});
 
         res.render('dashboard', {
-            ...user,
+            user,
             logged_in: true
         });
     } catch(err){
         res.status(401).json(err)
+    }
+});
+router.get('/newPost', withAuth, (req, res) => {
+    try {
+        res.render('newPost')
+    } catch (err){
+        res.status(500).json(err)
     }
 });
 router.get('/login', (req, res) => {

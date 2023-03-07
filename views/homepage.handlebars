@@ -1,17 +1,17 @@
-{{#if post.length}}
+{{#if posts.length}}
 <h2>Check out the Posts!</h2>
-<div>
-    {{#each post}}
-    <div class="postTitle" href="/posts/{{post.id}}">
+<div class= posts>
+    {{#each posts}}
+    <div class="postTitle" href="/posts/{{id}}">
         <h1>
-            <a href="/posts/{{post.id}}"> Sample </a>
+            <a href="/post/{{id}}"> {{title}} </a>
         </h1>
         <h4 class="postInfo">
-            Created by {{name}} on {{date}}
+            Created by {{user.userName}} on {{date}}
         </h4>
         <div class="postContent">
             <p>
-              {{post.content}}
+              {{content}}
             </p>
         </div>
     </div>
